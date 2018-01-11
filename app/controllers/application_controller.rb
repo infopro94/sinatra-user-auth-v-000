@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/home' do #render the user's homepage view (home.erb)
-    binding.pry
+    # binding.pry
     @user = User.find(session[:id])
     erb :'/users/home'
   end
