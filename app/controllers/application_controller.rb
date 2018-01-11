@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/sessions' do #receives POST request from submit in login.erb
-    #grabs user info from params hash, see registration above
+    @user = User.find_by(email: params[:email], password: params[:password])#grabs user info from params hash, see registration above
     redirect '/users/home'
   end
 
